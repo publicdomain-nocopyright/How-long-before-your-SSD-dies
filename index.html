@@ -30,14 +30,14 @@ Example: 35 * 5 = 176 years
 
 <script>
 function calculate(){
-	document.getElementsByTagName("output")[0].innerHTML = TBW_Endurance/TBW_Drive_Health * (Current_Year - Purchase_Year);
+	document.getElementsByTagName("output")[0].innerHTML = (TBW_Endurance/TBW_Drive_Health) * (Current_Year - Purchase_Year);
 }
 
 function calculate_placeholders(){
 	Purchase_Year = document.getElementById("Purchase_Year").placeholder;
 	TBW_Endurance = document.getElementById("TBW_Endurance").placeholder;
 	TBW_Drive_Health = document.getElementById("TBW_Drive_Health").placeholder;
-	document.getElementsByTagName("output")[0].innerHTML = TBW_Endurance/TBW_Drive_Health * (Current_Year - Purchase_Year);
+	document.getElementsByTagName("output")[0].innerHTML = (TBW_Endurance/TBW_Drive_Health) * (Current_Year - Purchase_Year);
 }
 
 </script>
