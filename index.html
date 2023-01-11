@@ -1,0 +1,47 @@
+
+<body onload="calculate_placeholders()">
+<h1>How long before your SSD dies</h1>
+<div>Current year: <script>document.write(Current_Year = new Date().getFullYear());</script></div>
+<div>Purchase year: <input id="Purchase_Year" placeholder="2018"       oninput="calculate()"></input></div>
+<div>TBW (Endurance): <input id="TBW_Endurance" placeholder="600"      oninput="calculate()"></input></div>
+<div>Drive Health: (TBW) <input id="TBW_Drive_Health" placeholder="17" oninput="calculate()"></input></div>
+
+<b>Output:</b> <i><output>NaN</output></i> years
+
+<h2>Steps explained</h2>
+
+<h3>1. Getting years of usage.</h3>
+<pre><code>Formula: Current year - Purchase year
+Example: 2023-2018 = 5 years
+</code></pre>
+
+<h3>2. Getting how many times the endurance will last.</h3>
+<pre><code>Formula: TBW (Endurance) / Drive Health 
+Example: 600/17 = 35 times.
+</code></pre>
+
+<h3>3. Use years of usage and endurance times.</h3>
+In the final step, we produce the years needed to kill your SSD by usage.
+
+<pre><code>Formula: endurance times * years of usage
+Example: 35 * 5 = 176 years
+</code></pre>
+
+
+<script>
+function calculate(){
+	Purchase_Year = document.getElementById("Purchase_Year").value;
+	TBW_Endurance = document.getElementById("TBW_Endurance").value;
+	TBW_Drive_Health = document.getElementById("TBW_Drive_Health").value;
+	document.getElementsByTagName("output")[0].innerHTML = TBW_Endurance/TBW_Drive_Health * (Current_Year - Purchase_Year);
+}
+
+function calculate_placeholders(){
+	Purchase_Year = document.getElementById("Purchase_Year").placeholder;
+	TBW_Endurance = document.getElementById("TBW_Endurance").placeholder;
+	TBW_Drive_Health = document.getElementById("TBW_Drive_Health").placeholder;
+	document.getElementsByTagName("output")[0].innerHTML = TBW_Endurance/TBW_Drive_Health * (Current_Year - Purchase_Year);
+}
+
+</script>
+</body>
