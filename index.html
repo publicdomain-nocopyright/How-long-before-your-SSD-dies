@@ -25,6 +25,8 @@ In the final step, we produce the years needed to kill your SSD by usage.
 
 <pre><code>Formula: endurance times * years of usage
 Example: 35 * 5 = 176 years
+
+35 times of 5 years would be needed.
 </code></pre>
 
 
@@ -37,8 +39,9 @@ function calculate_placeholders(){
 	Purchase_Year = document.getElementById("Purchase_Year").placeholder;
 	TBW_Endurance = document.getElementById("TBW_Endurance").placeholder;
 	TBW_Drive_Health = document.getElementById("TBW_Drive_Health").placeholder;
-	document.getElementsByTagName("output")[0].innerHTML = (TBW_Endurance/TBW_Drive_Health) * (Current_Year - Purchase_Year);
+	document.getElementsByTagName("output")[0].innerHTML = (((TBW_Endurance/TBW_Drive_Health) * (Current_Year - Purchase_Year)) * 5) - (Current_Year - Purchase_Year);
 }
 
 </script>
 </body>
+
