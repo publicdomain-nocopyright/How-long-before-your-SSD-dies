@@ -2,9 +2,9 @@
 <body onload="calculate_placeholders()">
 <h1>How long before your SSD dies</h1>
 <div>Current year: <script>document.write(Current_Year = new Date().getFullYear());</script></div>
-<div>Purchase year: <input id="Purchase_Year" placeholder="2018"       oninput="calculate()"></input></div>
-<div>TBW (Endurance): <input id="TBW_Endurance" placeholder="600"      oninput="calculate()"></input></div>
-<div>Drive Health: (TBW) <input id="TBW_Drive_Health" placeholder="17" oninput="calculate()"></input></div>
+<div>Purchase year: <input id="Purchase_Year" placeholder="2018"       oninput="Purchase_Year    = document.activeElement.value;    calculate();"></input></div>
+<div>TBW (Endurance): <input id="TBW_Endurance" placeholder="600"      oninput="TBW_Endurance    = document.activeElement.value;    calculate()"></input></div>
+<div>Drive Health: (TBW) <input id="TBW_Drive_Health" placeholder="17" oninput="TBW_Drive_Health = document.activeElement.value;    calculate()"></input></div>
 
 <b>Output:</b> <i><output>NaN</output></i> years
 
@@ -30,9 +30,6 @@ Example: 35 * 5 = 176 years
 
 <script>
 function calculate(){
-	Purchase_Year = document.getElementById("Purchase_Year").value;
-	TBW_Endurance = document.getElementById("TBW_Endurance").value;
-	TBW_Drive_Health = document.getElementById("TBW_Drive_Health").value;
 	document.getElementsByTagName("output")[0].innerHTML = TBW_Endurance/TBW_Drive_Health * (Current_Year - Purchase_Year);
 }
 
